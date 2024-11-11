@@ -10,11 +10,15 @@ public class YetAnotherTest {
     @ParameterizedTest
     @MethodSource("generateNumbers")
     void testIsPrime(int input) {
+        for (int i = 0; i < 20; i++) {
+            System.err.println("ERR: Running test: " + input);
+            System.out.println("OUT: Running test: " + input);
+        }
         assertTrue(isPrime(input));
     }
 
     public static IntStream generateNumbers() {
-        return IntStream.range(1, 500);
+        return IntStream.range(1, 55);
     }
 
     public static boolean isPrime(int number) {
